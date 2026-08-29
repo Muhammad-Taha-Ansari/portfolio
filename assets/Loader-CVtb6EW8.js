@@ -1,0 +1,1 @@
+import{j as s}from"./index-BbrxjUb9.js";import{k as r,H as e}from"./three-vendor-CyunUfDy.js";const n=()=>{const{progress:o}=r();return s.jsxs(e,{children:[s.jsx("span",{className:"canvas-load"}),s.jsxs("p",{style:{fontSize:14,color:"#f1f1f1",fontWeight:800,marginTop:40},children:[o.toFixed(2),"%"]})]})};export{n as L};
