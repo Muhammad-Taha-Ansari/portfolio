@@ -30,8 +30,10 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_DEPLOY_TARGET: github
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
