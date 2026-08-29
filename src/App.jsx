@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import React, { lazy, Suspense, useEffect } from "react";
+
 import {
   Hero,
   Navbar,
@@ -24,26 +25,34 @@ const Home = () => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
     }
   }, [location]);
 
   return (
     <>
       <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-        <Hero></Hero>
+        <Hero />
       </div>
-      <About></About>
-      <Experience></Experience>
-      <Involvement></Involvement>
-      <Tech></Tech>
-      <Works></Works>
-      <Certificates></Certificates>
-      <Feedbacks></Feedbacks>
+
+      <About />
+      <Experience />
+      <Involvement />
+      <Tech />
+      <Works />
+      <Certificates />
+      <Feedbacks />
+
       <div className="relative z-0">
-        <Contact></Contact>
+        <Contact />
+
         <Suspense fallback={null}>
-          <StarsCanvas></StarsCanvas>
+          <StarsCanvas />
         </Suspense>
       </div>
     </>
@@ -52,9 +61,10 @@ const Home = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <div className="relative z-0 bg-primary">
-        <Navbar></Navbar>
+        <Navbar />
+
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
