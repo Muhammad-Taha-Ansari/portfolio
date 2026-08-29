@@ -10,7 +10,7 @@ Every piece of data encrypted today with RSA or ECC carries an expiration date n
 
 This project is a final-year engineering effort to build ML-KEM-1024, the highest-security variant of the algorithm NIST selected as its primary post-quantum key encapsulation standard, from the ground up, with a hardware implementation as the end goal.
 
-![Encrypted data at rest: today's cryptographic protections carry a quietly ticking expiration date](/blog/security-lock-hero.png)
+![Encrypted data at rest: today's cryptographic protections carry a quietly ticking expiration date](/portfolio/blog/security-lock-hero.png)
 
 **Key takeaways**
 - "Harvest now, decrypt later" makes post-quantum migration an active problem, not a future one
