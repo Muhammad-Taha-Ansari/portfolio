@@ -23,12 +23,15 @@ const Home = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace("#", "");
-      const el = document.getElementById(id);
+      const id = location.hash.substring(1);
+      const element = document.getElementById(id);
 
-      if (el) {
+      if (element) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }, 100);
       }
     }
@@ -60,16 +63,37 @@ const Home = () => {
 };
 
 const App = () => {
+  /*
+   * Vite:
+   * GitHub Pages -> /portfolio/
+   * Cloudflare    -> /
+   */
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
   return (
-    <BrowserRouter basename="/portfolio">
+    <BrowserRouter basename={basename}>
       <div className="relative z-0 bg-primary">
         <Navbar />
 
-        <Suspense fallback={null}>
+        <Suspense
+          fallback={
+            <div className="flex min-h-screen items-center justify-center text-white">
+              Loading...
+            </div>
+          }
+        >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/publications" element={<BlogList />} />
-            <Route path="/publications/:slug" element={<BlogPost />} />
+
+            <Route
+              path="/publications"
+              element={<BlogList />}
+            />
+
+            <Route
+              path="/publications/:slug"
+              element={<BlogPost />}
+            />
           </Routes>
         </Suspense>
       </div>
