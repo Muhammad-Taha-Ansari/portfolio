@@ -63,42 +63,22 @@ const Home = () => {
 };
 
 const App = () => {
-  /*
-   * Vite:
-   * GitHub Pages -> /portfolio/
-   * Cloudflare    -> /
-   */
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
-
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter
+      basename={import.meta.env.BASE_URL.replace(/\/$/, "")}
+    >
       <div className="relative z-0 bg-primary">
         <Navbar />
 
-        <Suspense
-          fallback={
-            <div className="flex min-h-screen items-center justify-center text-white">
-              Loading...
-            </div>
-          }
-        >
+        <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
-
-            <Route
-              path="/publications"
-              element={<BlogList />}
-            />
-
-            <Route
-              path="/publications/:slug"
-              element={<BlogPost />}
-            />
+            <Route path="/publications" element={<BlogList />} />
+            <Route path="/publications/:slug" element={<BlogPost />} />
           </Routes>
         </Suspense>
       </div>
     </BrowserRouter>
   );
 };
-
 export default App;
