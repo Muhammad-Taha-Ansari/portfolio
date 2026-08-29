@@ -25,7 +25,7 @@ Quantum computers capable of breaking RSA or ECC at scale don't exist yet. But t
 
 That's the gap post-quantum cryptography is built to close: replacing the mathematical hard problems that quantum algorithms can solve efficiently with ones they can't.
 
-![The quantum threat to classical encryption: as quantum computing power grows, today's cryptographic locks become tomorrow's open doors](/blog/quantum-threat-encryption.png)
+![The quantum threat to classical encryption: as quantum computing power grows, today's cryptographic locks become tomorrow's open doors](/portfolio/blog/quantum-threat-encryption.png)
 
 ## Choosing a Direction: Security as the Foundation
 
